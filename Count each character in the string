@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {  
+    char str[1000];
+    scanf("%s", str);
+    int count[256] = {0};
+    int len = strlen(str);
+
+    // Count the occurrences of each character
+    for (int i = 0; i < len; i++) {
+        count[(unsigned char)str[i]]++;
+    }
+
+    // Print the character counts in the order they appear in the string
+    for (int i = 0; i < len; i++) {
+        if (count[(unsigned char)str[i]] != 0) {
+            printf("%c\t%d\n", str[i], count[(unsigned char)str[i]]);
+            count[(unsigned char)str[i]] = 0; // Mark as printed
+        }
+    }
+    return 0;
+}
