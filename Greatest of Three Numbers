@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    float num1, num2, num3;
+
+    scanf("%f", &num1);
+    scanf("%f", &num2);
+    scanf("%f", &num3);
+
+    if (num1 >= num2 && num1 >= num3) {
+        printf("Number1 is maximum with value of %.1f\n", num1);
+    } else if (num2 >= num1 && num2 >= num3) {
+        printf("Number2 is maximum with value of %.1f\n", num2);
+    } else {
+        printf("Number3 is maximum with value of %.1f\n", num3);
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
