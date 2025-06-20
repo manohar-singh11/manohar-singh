@@ -1,0 +1,30 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int wall_length, wall_breadth, painting1_length, painting1_breadth, painting2_length, painting2_breadth;
+
+    scanf("%d", &wall_length);
+    scanf("%d", &wall_breadth);
+    scanf("%d", &painting1_length);
+    scanf("%d", &painting1_breadth);
+    scanf("%d", &painting2_length);
+    scanf("%d", &painting2_breadth);
+
+    if (((painting1_length + painting2_length <= wall_length) && (painting1_breadth <= wall_breadth && painting2_breadth <= wall_breadth)) ||
+        ((painting1_breadth + painting2_breadth <= wall_breadth) && (painting1_length <= wall_length && painting2_length <= wall_length)) ||
+        ((painting1_length + painting2_breadth <= wall_length) && (painting1_breadth <= wall_breadth && painting2_length <= wall_breadth)) ||
+        ((painting1_breadth + painting2_length <= wall_breadth) && (painting1_length <= wall_length && painting2_breadth <= wall_length)))
+    {
+        printf("Raj can fix both painting");
+    } else {
+        printf("Raj cannot fix both painting");
+    }
+    return 0;
+}
